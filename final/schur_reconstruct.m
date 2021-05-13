@@ -1,4 +1,4 @@
-function X = svd_reconstruct(d)
+function X = schur_reconstruct(d)
     
 % Length of  distance matrix
 n = length(d);
@@ -16,17 +16,9 @@ for i = 1:n
 end
 
 
-% [Q, T] = schur(M)
-% T_ = [T(2, 2) 0; 0 T(4, 4)]
-% Q_ = [Q(:, 2) Q(:, 4)]
-% 
-% X = Q_ *  T_ ^ (1/2)
-% 
-% plot(X(:,1), X(:, 2))
-
-[U, S, V] = svd(M);
-index = find(diag(S) > 0.000001);
-X = U * sqrt(S);
+[Q, T] = schur(M);
+X = Q * sqrt(T);
+index = find(diag(T) > 0.001);
 empty = [];
 
 for i = 1:length(index)
@@ -34,5 +26,18 @@ for i = 1:length(index)
 end
 X = empty;
 
+
+% [U, S, V] = svd(M);
+% index = find(diag(S) > 0.001);
+% X = U * sqrt(S);
+% empty = [];
+% 
+% for i = 1:length(index)
+%     empty =[empty X(:, index(i))];
+% end
+% X = empty;
+
 end
+
+
 
