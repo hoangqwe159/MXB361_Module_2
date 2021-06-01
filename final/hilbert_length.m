@@ -1,5 +1,5 @@
 function d = hilbert_length(n)
-%hilbert_length Calcaulate the length of n-th order curve
+%hilbert_length Calculate the length of n-th order curve
 
 [x , y] = hilbert(n);
 d = 0;
