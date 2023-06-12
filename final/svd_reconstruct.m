@@ -1,5 +1,8 @@
 function X = svd_reconstruct(d)
-    
+% SVD method to reconstruct points from distance matrix
+% Input
+% d : distance matrix
+
 % Length of  distance matrix
 n = length(d);
 

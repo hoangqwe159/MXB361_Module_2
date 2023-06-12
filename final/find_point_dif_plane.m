@@ -1,5 +1,8 @@
 function index = find_point_dif_plane(d, dim)
 
+% Determine  the index of the points that are not in the same plane
+% d : the distance matrix
+% dim : the dimension of data
 index = 0;
 if dim == 3
     for i = dim+1:length(d)
@@ -11,7 +14,9 @@ if dim == 3
         d23 = temp(2,3);
         d24 = temp(2, 4);
         d34 = temp(3, 4);
-
+        
+        % Use the area of triangle to determine if four points in the same
+        % plane or not
         % 1 2 3
         s1 = (d12 + d23 + d13) / 2;
         A1 = sqrt(s1 * (s1 - d12) * (s1 - d23) * (s1 - d13));
@@ -27,7 +32,8 @@ if dim == 3
         % 2 3 4
         s4 = (d23 + d24 + d34) / 2;
         A4 = sqrt(s4 * (s4 - d23) * (s4 - d24) * (s4 - d34));
-
+        
+        % If four points are not in the same plane
         tolerance = 0.000001;
         if ~((abs((A1 + A2) -(A3 + A4)) <= tolerance) || (abs((A1 + A3) - (A2 + A4)) <= tolerance) || (abs((A1 + A4) - (A2 + A3)) <= tolerance))
            index = i;
@@ -44,6 +50,7 @@ elseif dim == 2
 
 
         tolerance = 0.000001;
+        % If three point not in the same line
         if ~((abs((d12 + d13) -d23) <= tolerance) || (abs(d12 + d23 - d13) <= tolerance) || (abs(d13 + d23 - d12) <= tolerance))
            index = i;
            break

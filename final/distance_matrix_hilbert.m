@@ -1,5 +1,10 @@
 function A = distance_matrix_hilbert(n, dim)
-%distance_matrix Distance matrix of all turning points
+% Distance matrix of all turning points
+% Input
+% n : the order of Hilber Curve
+% dim : the dimension of Hilbert Curve
+
+% 2D case
 if (dim == 2)
     [x, y] = hilbert(n);
     x_temp = x(1);
@@ -18,6 +23,8 @@ if (dim == 2)
 
     A = [x_temp;y_temp];
     A = squareform(pdist(A'));
+    
+% 3D case
 elseif (dim == 3)
     [x, y, z] = hilbert3(n);
     x_temp = x(1);

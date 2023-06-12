@@ -1,5 +1,5 @@
 function p = hilbert_points(n)
-%hilbert_points Calculate total number of points in n-th order 
+% Calculate total number of points in n-th order 
 % Hilbert Curve
 
 [x, y] = hilbert(n);

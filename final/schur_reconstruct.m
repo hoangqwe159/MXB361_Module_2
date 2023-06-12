@@ -1,5 +1,8 @@
 function X = schur_reconstruct(d)
-    
+% Schur method to reconstruct points from distance matrix
+% Input
+% d : distance matrix    
+
 % Length of  distance matrix
 n = length(d);
 

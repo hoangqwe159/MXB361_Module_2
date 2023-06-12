@@ -1,5 +1,8 @@
 function d = distance(x0, y0, x1, y1)
-%distance Calculate distance between two points
+% Calculate distance between two points
+% Input
+% x0, y0, x1, y1 : the coordinates of two points
+
 d = sqrt((x0 - x1)^2 + (y0 - y1)^2);
 end
 

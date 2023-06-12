@@ -17,7 +17,3 @@ else
     y = .5*[.5+xo .5+zo .5+zo .5+yo -.5+yo -.5-zo -.5-zo -.5-xo];
     z = .5*[.5+yo -.5+xo -.5+xo .5-zo .5-zo -.5+xo -.5+xo .5-yo];
 end
-
-% x = .5*[1+zo 1+yo -1+yo -1-xo -1-xo -1-yo 1-yo 1+zo];
-% y = .5*[1+xo 1+zo 1+zo 1+yo -1+yo -1-zo -1-zo -1-xo];
-% z = .5*[1+yo -1+xo -1+xo 1-zo 1-zo -1+xo -1+xo 1-yo];

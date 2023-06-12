@@ -1,5 +1,5 @@
 function p = hilbert3_points(n)
-%hilbert3_points Calculate total number of turning points in n-th order 
+% Calculate total number of turning points in n-th order 
 % Hilbert Curve 3D
 
 [x, y, z] = hilbert3(n);

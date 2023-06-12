@@ -1,5 +1,5 @@
 function [x,y] = hilbert(n)
-%HILBERT Hilbert curve.
+% Hilbert curve.
 %
 % [x,y]=hilbert(n) gives the vector coordinates of points
 %   in n-th order Hilbert curve of area 1.
